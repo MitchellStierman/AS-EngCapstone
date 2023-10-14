@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Financial Tracker</string>
+    <string name="amount_hint">$0.00</string>
+</resources>
