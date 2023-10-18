@@ -72,7 +72,7 @@ public class DatabaseHandler extends SQLiteOpenHelper{
         values.put(DATE_COL, date);
         values.put(AMOUNT_COL, amount);
 
-        db.insert(TABLE_NAME_INCOME, null, values);
+        db.insert(TABLE_NAME_EXPENSES, null, values);
         db.close();
 
     }

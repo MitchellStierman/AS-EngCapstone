@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     int income, expense;
     EditText incomeInput, expenseInput;
 
-    Button submitButton, submitButton2;
+    Button incomeButton, expenseButton;
 
     private DatabaseHandler db;
 
@@ -23,12 +23,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         incomeInput = (EditText) findViewById(R.id.incomeInput);
-        submitButton = (Button) findViewById(R.id.submitButton);
-        submitButton.setOnClickListener(new View.OnClickListener(){
+        incomeButton = (Button) findViewById(R.id.incomeButton);
+        incomeButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 if (TextUtils.isEmpty(incomeInput.getText().toString())){
-                    //showToast("Please enter an amount.");
                     incomeInput.setError("You must enter an amount.");
                 } else {
                     income = Integer.parseInt(incomeInput.getText().toString());
@@ -37,30 +36,26 @@ public class MainActivity extends AppCompatActivity {
                     db.addNewIncome("test", income);
                     showToast("Income Added");
                 }
-
             }
-
         });
 
         expenseInput = (EditText) findViewById(R.id.expenseInput);
-        submitButton2 = (Button) findViewById(R.id.submitButton2);
-        submitButton2.setOnClickListener(new View.OnClickListener(){
+        expenseButton = (Button) findViewById(R.id.submitButton2);
+        expenseButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 if (TextUtils.isEmpty(expenseInput.getText().toString())) {
-                    //showToast("Please enter an amount.");
                     expenseInput.setError("You must enter an amount.");
 
                 } else {
                     expense = Integer.parseInt(expenseInput.getText().toString());
 
                     db = new DatabaseHandler(MainActivity.this);
-                    db.addNewIncome("test", expense);
+                    db.addNewExpense("test", expense);
                     showToast("Expense Submitted");
                 }
             }
         });
-
     }
 
     private void showToast(String text){
