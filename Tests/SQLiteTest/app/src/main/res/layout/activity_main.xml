@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="188dp"
-        android:layout_height="337dp"
+        android:layout_height="358dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="42dp"
@@ -24,10 +24,10 @@
             android:id="@+id/incomeInput"
             android:layout_width="match_parent"
             android:layout_height="58dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/amount_hint"
-            android:inputType="number|numberDecimal"
-            android:autofillHints=""/>
+            android:inputType="number|numberDecimal" />
 
         <Button
             android:id="@+id/incomeButton"
@@ -45,16 +45,28 @@
             android:id="@+id/expenseInput"
             android:layout_width="match_parent"
             android:layout_height="58dp"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/amount_hint"
-            android:inputType="number|numberDecimal"
-            android:autofillHints=""/>
+            android:inputType="number|numberDecimal" />
 
         <Button
-            android:id="@+id/submitButton2"
+            android:id="@+id/expenseButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit Expense" />
+
+        <Button
+            android:id="@+id/expenseReportButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expense Report" />
+
+        <Button
+            android:id="@+id/incomeReportButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Income Report" />
 
     </LinearLayout>
 

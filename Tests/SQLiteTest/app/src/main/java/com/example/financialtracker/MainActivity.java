@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     int income, expense;
     EditText incomeInput, expenseInput;
 
-    Button incomeButton, expenseButton;
+    Button incomeButton, expenseButton, expenseReportButton, incomeReportButton;
 
     private DatabaseHandler db;
 
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         expenseInput = (EditText) findViewById(R.id.expenseInput);
-        expenseButton = (Button) findViewById(R.id.submitButton2);
+        expenseButton = (Button) findViewById(R.id.expenseButton);
         expenseButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -56,7 +56,29 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        expenseReportButton = (Button) findViewById(R.id.expenseReportButton);
+        expenseReportButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                db = new DatabaseHandler(MainActivity.this);
+                db.getExpenses("", "");
+            }
+        });
+
+        incomeReportButton = (Button) findViewById(R.id.incomeReportButton);
+        incomeReportButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                db = new DatabaseHandler(MainActivity.this);
+                db.getIncome("", "");
+            }
+        });
+
     }
+
+
+
 
     private void showToast(String text){
         Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT).show();
