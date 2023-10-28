@@ -1,6 +1,6 @@
 # Financial Report Tracker/Generator
 Tests will be entered into the Tests folder. Once they are ready for integration into the main project
-they will be transitioned into the main pr[SQLiteTest](Tests%2FSQLiteTest)oject folder *Insert Name Here*
+they will be transitioned into the main project folder *Insert Name Here*
 
 
 ## Requirements
